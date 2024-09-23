@@ -1,0 +1,40 @@
+# system ignore
+.DS_Store
+Thumbs.db
+src/main/resources/git.properties
+src/main/resources/application.properties
+
+# maven ignore
+target
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+!.mvn/wrapper/maven-wrapper.jar
+
+# sts ignore
+.apt_generated
+.classpath
+.factorypath
+.settings
+.springBeans
+.project
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+*.idea
+*.iml
+
+# bin ignore
+bin
+
+# logs ignore
+logs
+log
+src/main/resources/git.propertiess
+pom-xml-flattened
