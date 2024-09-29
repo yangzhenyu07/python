@@ -1,0 +1,661 @@
+2024-09-29 15:16:03 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 15:16:03 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 15:16:03 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 15:16:03 [scrapy.extensions.telnet] INFO: Telnet Password: 63393d2119c14c11
+2024-09-29 15:16:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 15:16:04 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 15:16:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 15:16:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 15:16:04 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 15:16:04 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 15:16:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 15:16:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 15:20:47 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2024-09-29 15:20:47 [scrapy.core.scraper] ERROR: Spider error processing <GET https://top.baidu.com/board?platform=pc&sa=pcindex_entry> (referer: None)
+Traceback (most recent call last):
+  File "E:\soft\python\lib\site-packages\scrapy\utils\defer.py", line 279, in iter_errback
+    yield next(it)
+  File "E:\soft\python\lib\site-packages\scrapy\utils\python.py", line 350, in __next__
+    return next(self.data)
+  File "E:\soft\python\lib\site-packages\scrapy\utils\python.py", line 350, in __next__
+    return next(self.data)
+  File "E:\soft\python\lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "E:\soft\python\lib\site-packages\scrapy\spidermiddlewares\referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "E:\soft\python\lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "E:\soft\python\lib\site-packages\scrapy\spidermiddlewares\urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "E:\soft\python\lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "E:\soft\python\lib\site-packages\scrapy\spidermiddlewares\depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "E:\soft\python\lib\site-packages\scrapy\core\spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "E:\python\python\test\yzy-python\scrapy\baidu_hots\baidu_hots\spiders\baidu_spider.py", line 19, in parse
+    if rank is None or rank.strip() == "":
+  File "E:\python\python\test\yzy-python\scrapy\baidu_hots\baidu_hots\spiders\baidu_spider.py", line 19, in parse
+    if rank is None or rank.strip() == "":
+  File "E:\soft\python\lib\bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "E:\soft\python\lib\bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2024-09-29 15:20:47 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 2 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 15:20:47 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-09-29 15:20:47 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43528,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 283.481392,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2024, 9, 29, 7, 20, 47, 868822, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243290,
+ 'httpcompression/response_count': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 12,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/BdbQuit': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 7, 16, 4, 387430, tzinfo=datetime.timezone.utc)}
+2024-09-29 15:20:47 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2024-09-29 15:20:53 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 15:20:53 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 15:20:53 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 15:20:53 [scrapy.extensions.telnet] INFO: Telnet Password: 9cf64c10c61f1830
+2024-09-29 15:20:53 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 15:20:53 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 15:20:53 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 15:20:53 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 15:20:53 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 15:20:53 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 15:20:53 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 15:20:53 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 15:21:28 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 15:21:28 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43794,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 34.492993,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 7, 21, 28, 364624, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243205,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 7, 20, 53, 871631, tzinfo=datetime.timezone.utc)}
+2024-09-29 15:21:28 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 15:21:39 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 15:21:39 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 15:21:39 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 15:21:39 [scrapy.extensions.telnet] INFO: Telnet Password: 6aa7f0ff34efcb8a
+2024-09-29 15:21:39 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 15:21:39 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 15:21:39 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 15:21:39 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 15:21:39 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 15:21:39 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 15:21:39 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 15:21:39 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 15:21:40 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 15:21:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43794,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.000817,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 7, 21, 40, 888482, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243205,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 7, 21, 39, 887665, tzinfo=datetime.timezone.utc)}
+2024-09-29 15:21:40 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 15:50:30 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 15:50:30 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 15:50:30 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 15:50:30 [scrapy.extensions.telnet] INFO: Telnet Password: 753b37508b2f7070
+2024-09-29 15:50:30 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 15:50:30 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 15:50:30 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 15:50:30 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 15:50:30 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 15:50:30 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 15:50:30 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 15:50:30 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 15:50:32 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 15:50:32 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43597,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.613051,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 7, 50, 32, 398187, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243470,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 7, 50, 30, 785136, tzinfo=datetime.timezone.utc)}
+2024-09-29 15:50:32 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 16:06:54 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 16:06:55 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 16:06:55 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 16:06:55 [scrapy.extensions.telnet] INFO: Telnet Password: 1850a5639cc99788
+2024-09-29 16:06:55 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 16:06:55 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 16:06:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 16:06:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 16:06:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 16:06:55 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 16:06:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 16:06:55 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 16:08:53 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 2 pages/min), scraped 1 items (at 1 items/min)
+2024-09-29 16:09:00 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 0 pages/min), scraped 2 items (at 1 items/min)
+2024-09-29 16:14:20 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 0 pages/min), scraped 3 items (at 1 items/min)
+2024-09-29 16:14:43 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 16:14:43 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43623,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 467.48331,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 8, 14, 43, 240962, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243497,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 13,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 8, 6, 55, 757652, tzinfo=datetime.timezone.utc)}
+2024-09-29 16:14:43 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 16:15:45 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 16:15:45 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 16:15:45 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 16:15:45 [scrapy.extensions.telnet] INFO: Telnet Password: 05e20548439b6ea3
+2024-09-29 16:15:46 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 16:15:46 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 16:15:46 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 16:15:46 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 16:15:46 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 16:15:46 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 16:15:46 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 16:15:46 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 16:16:02 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 16:16:02 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43559,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 15.947371,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 8, 16, 2, 370882, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243573,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 8, 15, 46, 423511, tzinfo=datetime.timezone.utc)}
+2024-09-29 16:16:02 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 16:21:08 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 16:21:08 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 16:21:08 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 16:21:08 [scrapy.extensions.telnet] INFO: Telnet Password: 1370a644fa08d72c
+2024-09-29 16:21:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 16:21:08 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 16:21:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 16:21:09 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 16:21:09 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 16:21:09 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 16:21:09 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 16:21:09 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 16:21:10 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 16:21:10 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43283,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1.723923,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 8, 21, 10, 872492, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 242849,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 8, 21, 9, 148569, tzinfo=datetime.timezone.utc)}
+2024-09-29 16:21:10 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-29 16:21:37 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 16:21:37 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 16:21:37 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 16:21:37 [scrapy.extensions.telnet] INFO: Telnet Password: a1ebc7c7b1882571
+2024-09-29 16:21:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 16:21:38 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 16:21:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 16:21:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 16:21:38 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 16:21:38 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 16:21:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 16:21:38 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 16:45:35 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2024-09-29 16:45:36 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 2 pages/min), scraped 1 items (at 1 items/min)
+2024-09-29 16:45:36 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2024-09-29 16:45:38 [scrapy.extensions.logstats] INFO: Crawled 2 pages (at 0 pages/min), scraped 6 items (at 5 items/min)
+2024-09-29 16:45:39 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43383,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 1441.022706,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2024, 9, 29, 8, 45, 39, 362703, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 242890,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 13,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 8, 21, 38, 339997, tzinfo=datetime.timezone.utc)}
+2024-09-29 16:45:39 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2024-09-29 16:45:44 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: baidu_hots)
+2024-09-29 16:45:44 [scrapy.utils.log] INFO: Versions: lxml 5.3.0.0, libxml2 2.11.7, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)], pyOpenSSL 24.2.1 (OpenSSL 3.3.2 3 Sep 2024), cryptography 43.0.1, Platform Windows-10-10.0.22631-SP0
+2024-09-29 16:45:44 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-29 16:45:44 [scrapy.extensions.telnet] INFO: Telnet Password: a43103910b7ee052
+2024-09-29 16:45:44 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-29 16:45:44 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'baidu_hots',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'baidu_hots.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['baidu_hots.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-29 16:45:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-29 16:45:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-29 16:45:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['baidu_hots.pipelines.BaiduHotsPipeline']
+2024-09-29 16:45:44 [scrapy.core.engine] INFO: Spider opened
+2024-09-29 16:45:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-29 16:45:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-29 16:45:49 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-29 16:45:49 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 472,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 43594,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 5.226393,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 29, 8, 45, 49, 944566, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 243167,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 10,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2024, 9, 29, 8, 45, 44, 718173, tzinfo=datetime.timezone.utc)}
+2024-09-29 16:45:49 [scrapy.core.engine] INFO: Spider closed (finished)

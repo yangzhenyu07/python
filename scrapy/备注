@@ -1,0 +1,11 @@
+安装 Scrapy
+首先，确保你已经安装了 Scrapy，可以使用 pip 进行安装：
+pip install scrapy
+
+验证 Scrapy 是否安装成功
+成功安装 Scrapy 后，运行以下命令验证：
+scrapy version
+
+初始化项目
+首先，启动一个 Scrapy 项目：
+scrapy startproject baidu_hots
