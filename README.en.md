@@ -15,3 +15,7 @@ boss职位信息爬虫
 
 ## sqlalchemy
 数据库连接池
+
+## scrapy
+python scrapy 框架
+![本地图片](images/5.png)
